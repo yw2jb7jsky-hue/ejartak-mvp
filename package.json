@@ -1,9 +1,18 @@
 {
-  "name": "ejartak-mvp",
+  "name": "ejartak-platform",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "npm@10.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "start": "python -m http.server 8000",
-    "dev": "python -m http.server 8000"
+    "dev": "concurrently \"npm run dev --workspace @ejartak/admin\" \"npm run dev --workspace @ejartak/storefront\" \"npm run dev --workspace @ejartak/api\"",
+    "build": "npm run build --workspace @ejartak/admin && npm run build --workspace @ejartak/storefront && npm run build --workspace @ejartak/api",
+    "lint": "npm run lint --workspace @ejartak/admin && npm run lint --workspace @ejartak/storefront && npm run lint --workspace @ejartak/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
   }
 }
