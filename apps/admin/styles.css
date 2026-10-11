@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>إيجار تك | لوحة التحكم</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <div class="brand-box">
+          <div class="brand-badge">إ</div>
+          <div>
+            <h1>إيجار تك</h1>
+            <small>لوحة الإدارة</small>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a class="active" href="#">لوحة التحكم</a>
+          <a href="#">السيارات</a>
+          <a href="#">الحجوزات</a>
+          <a href="#">العملاء</a>
+          <a href="#">التقارير</a>
+          <a href="#">الأسعار</a>
+          <a href="#">الإعدادات</a>
+        </nav>
+
+        <div class="sidebar-card">
+          <span class="label">اشتراك المكتب</span>
+          <strong>برو</strong>
+          <button>تجديد</button>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">مرحبًا بك</p>
+            <h2>نظرة عامة على النشاط</h2>
+          </div>
+          <div class="topbar-actions">
+            <button class="ghost-btn">تصدير</button>
+            <button class="primary-btn">إضافة سيارة</button>
+          </div>
+        </header>
+
+        <section class="stats-grid" id="statsGrid"></section>
+
+        <section class="content-grid">
+          <div class="panel wide-panel">
+            <div class="panel-header">
+              <h3>السيارات</h3>
+              <button class="text-btn">عرض الكل</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>السيارة</th>
+                    <th>الفئة</th>
+                    <th>السعر</th>
+                    <th>الحالة</th>
+                    <th>الإجراءات</th>
+                  </tr>
+                </thead>
+                <tbody id="carTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h3>الحجوزات الحديثة</h3>
+              <button class="text-btn">الكل</button>
+            </div>
+            <div id="bookingList" class="booking-list"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

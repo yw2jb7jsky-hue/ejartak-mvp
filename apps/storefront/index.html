@@ -1,0 +1,80 @@
+const stats = [
+  { title: 'إجمالي السيارات', value: '146', change: '+12%', tone: 'positive', icon: '🚗' },
+  { title: 'الحجوزات هذا الشهر', value: '284', change: '+9%', tone: 'positive', icon: '📅' },
+  { title: 'الإيراد', value: '24,500', change: '+18%', tone: 'positive', icon: '💰' },
+  { title: 'طلبات معلقة', value: '19', change: '-4%', tone: 'warning', icon: '⏳' }
+];
+
+const cars = [
+  { name: 'تويوتا كامري', type: 'سيدان', price: '320', status: 'متاح', badge: 'ready' },
+  { name: 'BMW X5', type: 'SUV', price: '620', status: 'في رحلة', badge: 'busy' },
+  { name: 'مرسيدس C200', type: 'فاخرة', price: '540', status: 'متاح', badge: 'ready' },
+  { name: 'هيونداي سوناتا', type: 'عائلية', price: '290', status: 'مؤجّلة', badge: 'trip' }
+];
+
+const bookings = [
+  { name: 'أحمد السالم', car: 'BMW X5', price: '620', time: 'اليوم 18:00' },
+  { name: 'سارة الخالدي', car: 'كامري', price: '320', time: 'غدًا 10:30' },
+  { name: 'عبدالرحمن', car: 'مرسيدس C200', price: '540', time: 'الأحد 12:00' }
+];
+
+const statsGrid = document.getElementById('statsGrid');
+const carTableBody = document.getElementById('carTableBody');
+const bookingList = document.getElementById('bookingList');
+
+function renderStats() {
+  statsGrid.innerHTML = stats.map((item) => {
+    const toneClass = item.tone === 'positive' ? 'positive' : 'warning';
+    return `
+      <article class="stat-card">
+        <div class="stat-top">
+          <div class="stat-icon" style="background:${item.tone === 'positive' ? '#dbeafe' : '#fff4db'}">${item.icon}</div>
+          <span class="pill ${toneClass}">${item.change}</span>
+        </div>
+        <h3>${item.value}</h3>
+        <p>${item.title}</p>
+      </article>
+    `;
+  }).join('');
+}
+
+function renderCars() {
+  carTableBody.innerHTML = cars.map((car) => `
+    <tr>
+      <td>
+        <div class="car-meta">
+          <div class="car-thumb">🚘</div>
+          <span>${car.name}</span>
+        </div>
+      </td>
+      <td>${car.type}</td>
+      <td>${car.price} ر.س</td>
+      <td><span class="status-tag ${car.badge}">${car.status}</span></td>
+      <td>
+        <div class="row-actions">
+          <button>تعديل</button>
+          <button>عرض</button>
+        </div>
+      </td>
+    </tr>
+  `).join('');
+}
+
+function renderBookings() {
+  bookingList.innerHTML = bookings.map((booking) => `
+    <div class="booking-item">
+      <div class="booking-details">
+        <strong>${booking.name}</strong>
+        <span>${booking.car} • ${booking.time}</span>
+      </div>
+      <div class="booking-price">
+        <strong>${booking.price} ر.س</strong>
+        <span class="status-tag ready">مؤكد</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+renderStats();
+renderCars();
+renderBookings();

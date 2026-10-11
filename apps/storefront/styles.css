@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>إيجار تك | متجر التأجير</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">إ</div>
+          <span>إيجار تك</span>
+        </div>
+        <nav>
+          <a href="#">الرئيسية</a>
+          <a href="#cars">السيارات</a>
+          <a href="#offers">العروض</a>
+          <a href="#about">من نحن</a>
+        </nav>
+        <button class="primary-btn">احجز الآن</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-content">
+          <div class="hero-copy">
+            <span class="badge">منصة مخصصة لمكاتب التأجير</span>
+            <h1>أسهل طريقة لعرض سياراتك وتأجيرها عبر الإنترنت</h1>
+            <p>
+              أنشئ متجرًا احترافيًا لمكتبك، أضف سياراتك، وحدد الأسعار، واستقبل الحجوزات من عملائك بكل سهولة.
+            </p>
+            <div class="hero-actions">
+              <button class="primary-btn">ابدأ الآن</button>
+              <button class="secondary-btn">استعرض السيارات</button>
+            </div>
+            <ul class="hero-stats">
+              <li><strong>250+</strong><span>سيارة</span></li>
+              <li><strong>4.9/5</strong><span>تقييم</span></li>
+              <li><strong>24/7</strong><span>دعم</span></li>
+            </ul>
+          </div>
+          <div class="hero-panel">
+            <div class="mini-card">
+              <span>أكثر طلبًا</span>
+              <h3>BMW X5</h3>
+              <p>من 620 ر.س / يوم</p>
+            </div>
+            <div class="booking-card">
+              <h4>حجز سريع</h4>
+              <div class="booking-form">
+                <label>
+                  <span>نوع السيارة</span>
+                  <select>
+                    <option>سيدان</option>
+                    <option>SUV</option>
+                    <option>فاخرة</option>
+                  </select>
+                </label>
+                <label>
+                  <span>مدة التأجير</span>
+                  <select>
+                    <option>يوم</option>
+                    <option>أسبوع</option>
+                    <option>شهر</option>
+                  </select>
+                </label>
+                <button class="primary-btn btn-full">ابحث الآن</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="filter-bar container" id="cars">
+        <div class="filter-chip active">الكل</div>
+        <div class="filter-chip">SUV</div>
+        <div class="filter-chip">سيدان</div>
+        <div class="filter-chip">عائلية</div>
+        <div class="filter-chip">فاخرة</div>
+      </section>
+
+      <section class="cars container" id="offers">
+        <div class="section-head">
+          <div>
+            <span class="subheading">السيارات المتاحة</span>
+            <h2>اختَر السيارة المناسبة لك</h2>
+          </div>
+          <a href="#">عرض الكل</a>
+        </div>
+        <div class="car-grid" id="carGrid"></div>
+      </section>
+
+      <section class="features container" id="about">
+        <div class="feature-item">
+          <div class="feature-icon">🚗</div>
+          <h3>أسطول متنوع</h3>
+          <p>سيارات عائلية، فاخرة، وسيارات مناسبة للأعمال والسياحة.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💳</div>
+          <h3>حجز سريع</h3>
+          <p>تجربة حجز سهلة، دقيقة، ومتكاملة مع تأكيد الطلب.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🛡️</div>
+          <h3>موثوق</h3>
+          <p>إدارة احترافية للسيارات والطلبات مع متابعة مباشرة.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <h3>إيجار تك</h3>
+          <p>بنية رقمية احترافية لمكاتب تأجير السيارات.</p>
+        </div>
+        <div>
+          <strong>تواصل معنا</strong>
+          <p>hello@ejartak.com</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
